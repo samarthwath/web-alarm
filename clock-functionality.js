@@ -88,6 +88,7 @@ function parseHumanTime(alarmHour, alramMinutes, alarmTimeZone, flagStopInterval
                 currentTimeZone = `PM`;
             }
             if (currentHourValue === Number.parseInt(alarmHour) && dateObject.getMinutes() === Number.parseInt(alramMinutes) && currentTimeZone === alarmTimeZone) {
+                alarmBtn.disabled = true;
                 console.log(`------Alarm Ringing start------`);
                 audioElement.src = `./wake-up.mp3`;
                 audioElement.autoplay = true;
@@ -95,7 +96,6 @@ function parseHumanTime(alarmHour, alramMinutes, alarmTimeZone, flagStopInterval
                 localStorage.removeItem(`timerId`);
                 console.log(`------Alarm Ringing ends------`);
                 setTimeout(() => {
-                    alarmBtn.innerText = `Set Alarm`;
                     let hourSelectBox = document.querySelector(`#hour-select-box`);
                     let minutesSelectBox = document.querySelector(`#minutes-select-box`);
                     let timeZoneSelectBox = document.querySelector(`#time-zone-select-box`);
@@ -105,6 +105,8 @@ function parseHumanTime(alarmHour, alramMinutes, alarmTimeZone, flagStopInterval
                     hourSelectBox.disabled = false;
                     minutesSelectBox.disabled = false;
                     timeZoneSelectBox.disabled = false;
+                    alarmBtn.innerText = `Set Alarm`;
+                    alarmBtn.disabled = false;
                     alarmBtn.classList.remove(clearAlarmColorClass);
                     alarmBtn.classList.add(setAlarmColorClass);
                 }, 60000);
