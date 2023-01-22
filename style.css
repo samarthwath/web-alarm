@@ -1,0 +1,25 @@
+*{
+    font-family: 'Russo One', sans-serif;
+}
+.style-day{  
+    font-size: 35px;
+}
+.style-time{  
+    font-size: 35px;
+}
+.dropdown-menu{
+    max-height: 200px;
+    overflow-y: auto;
+}
+.custom-select{
+    max-height: 200px;
+    overflow-y: auto;
+    
+}
+.container{
+    max-width: 1000px;
+}
+option{
+    height: 100px;
+    overflow: auto;
+  }
